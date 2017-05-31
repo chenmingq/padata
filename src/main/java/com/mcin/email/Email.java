@@ -20,8 +20,8 @@ public class Email {
     public static final String HOST = "smtp.163.com"; // 发送邮件的服务器地址
     public static final String PROTOCOL = "smtp"; // 发送邮件的协议
     public static final int PORT = 25;
-    public static final String EMAIL_FROM = "mcin123@163.com";//发件人的email
-    public static final String EMAIL_PWD = "mcin123";//发件人密码
+    public static final String EMAIL_FROM = "//发件人的email";//发件人的email
+    public static final String EMAIL_PWD = "发件人密码";//发件人密码
 
 
     /**

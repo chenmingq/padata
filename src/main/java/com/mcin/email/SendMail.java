@@ -15,9 +15,9 @@ public class SendMail {
 
     private static final Logger logger = Logger.getLogger(SendMail.class);
 
-    final static String TO_EMAIL_ADDRESS = "fengniao@haikedao.com"; //收件人账号邮箱
-    final static String USER_NAME = "yingwu@haikedao.com"; // 自己的企业邮箱
-    final static String PASS_WORD = "520520cheN"; //密码
+    final static String TO_EMAIL_ADDRESS = "收件人账号邮箱"; //收件人账号邮箱
+    final static String USER_NAME = "自己的企业邮箱"; // 自己的企业邮箱
+    final static String PASS_WORD = "/密码"; //密码
     final static String SUBJECT = "这是企业邮箱发送的主题"; //邮件主题
     final static String CONTENT = "这是企业邮箱发送的内容"; // 邮件内容
 
