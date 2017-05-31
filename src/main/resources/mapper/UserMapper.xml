@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mcin.dao.InfoMapper">
+
+	<resultMap id="infoMap" type="com.mcin.model.Info">
+		<result column="id" property="id" />
+		<result column="company_name" property="companyName" />
+		<result column="user_info" property="userInfo" />
+		<result column="host" property="host" />
+		<result column="create_time" property="createTime" />
+	</resultMap>
+
+
+	<!-- 添加数据 -->
+	<insert id="insertData" parameterType="com.mcin.model.Info">
+		INSERT INTO pc_medein_china_food (company_name,user_info,host,create_time)  VALUES (#{companyName},#{userInfo},#{host},#{createTime})
+	</insert>
+
+	<!-- 查询数据是否被添加 -->
+	<select id="selectNum" parameterType="String" resultType="int">
+		SELECT COUNT(1) FROM pc_medein_china_food WHERE user_info = #{userInfo} LIMIT 1
+	</select>
+
+	<!-- 查询所有的数据 -->
+	<select id="selectInfo" resultMap="infoMap">
+		SELECT * FROM pc_medein_china_food
+	</select>
+
+	<!-- 添加ip -->
+	<insert id="insertIp" parameterType="Map" >
+		INSERT INTO ip (ip,prot,create_time) VALUES (#{ip},#{prot},now())
+	</insert>
+
+	<!-- 查询ip是否被保存 -->
+	<select id="selectIpNum" parameterType="Map" resultType="Integer">
+		SELECT COUNT(1) FROM ip WHERE ip=#{ip} AND prot = #{prot}
+	</select>
+
+	<!-- 查询出随机一条ip -->
+	<select id="roandIp" resultType="Map">
+		SELECT ip,prot FROM ip order by rand() limit 1
+	</select>
+
+</mapper>

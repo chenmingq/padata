@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+  <configuration>
+  	<!-- 数据库连接环境
+  		default 默认加载的数据库环境 属性值为environment中的id属性值
+  	 -->
+  	<environments default="mybatis">
+  	
+  		<!-- 数据库环境
+  			id - 数据库环境的id
+  		 -->
+	    <environment id="info">
+	      <!-- 事务处理管理器 
+	      	使用JDBC的事务处理机制
+	      -->	
+	      <transactionManager type="JDBC"/>
+	      <!-- 
+	      	配置数据库连接的数据源
+	      	type 使用的数据库连接池POOLED
+	       -->
+	      <dataSource type="POOLED">
+	      	<!-- dataSource对象中的属性 驱动 -->
+	        <property name="driver" value="com.mysql.jdbc.Driver"/>
+	      	<!-- dataSource对象中的属性 url -->
+	        <property name="url" value="jdbc:mysql://localhost:3306/hiakedata?useUnicode=true&amp;characterEncoding=UTF-8"/>
+	      	<!-- dataSource对象中的属性 数据库的用户名-->
+	        <property name="username" value="root"/>
+	      	<!-- dataSource对象中的属性 数据库的密码 -->
+	        <property name="password" value="123456"/>
+	      </dataSource>
+	    </environment>
+	  </environments>
+	  
+	  <!-- 导入映射文件 -->
+	  <mappers>
+	    <mapper resource="mapper/UserMapper.xml"/>
+	  </mappers>
+
+</configuration>
+
